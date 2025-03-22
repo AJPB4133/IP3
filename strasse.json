@@ -5,23 +5,23 @@
     },
     {  
         "ID": "2",
-        "Name": "Test2"
+        "Name": "Strasse2"
     },
     {
         "ID": "3",
-        "Name": "Test3"
+        "Name": "Strasse3"
     },
     {
         "ID": "4",
-        "Name": "Test4"
+        "Name": "Strasse4"
     },
     {
         "ID": "5",
-        "Name": "Test5"
+        "Name": "Strasse5"
     },
     {   
         "ID": "6",
-        "Name": "Test6"
+        "Name": "Strasse6"
     }
 
 ]

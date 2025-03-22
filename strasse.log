@@ -1,0 +1,9 @@
+2025-03-22 17:31:50,091-ERROR-Fehler bei der Datenbankverbindung: 
+2025-03-22 17:32:48,210-ERROR-Fehler bei der Datenbankverbindung: 
+2025-03-22 17:33:37,055-ERROR-Fehler bei der Datenbankverbindung: 
+2025-03-22 17:35:51,803-ERROR-Ein unerwarteter Fehler ist aufgetretten: 'name'
+2025-03-22 17:36:36,501-ERROR-Fehler bei der Datenbankverbindung: FEHLER:  Spalte »id« von Relation »strasse« existiert nicht
+LINE 1: INSERT INTO strasse (id, strassen_name) VALUES ('1','Poststr...
+                             ^
+
+2025-03-22 17:37:04,950-INFO-Daten erfolgreich in die Datenbank importiert
