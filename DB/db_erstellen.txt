@@ -5,9 +5,15 @@ DROP TABLE IF EXISTS Zustand CASCADE;
 DROP TABLE IF EXISTS Typen	CASCADE;
 
 
+CREATE TABLE IF NOT EXISTS Strassentyp(
+	Strassentyp_ID INTEGER PRIMARY KEY,
+	Strassentyp_Name VARCHAR (20),
+);
+
 CREATE TABLE IF NOT EXISTS Strasse(
 	Strasse_ID INTEGER PRIMARY KEY,
-	Strassen_Name VARCHAR (100)
+	Strassen_Name VARCHAR (100),
+	Strassentyp_ID INTEGER REFERENCES Strassentyp(Strassentyp_ID)
 );
 		
 CREATE TABLE IF NOT EXISTS Strassensegment(
@@ -16,10 +22,11 @@ CREATE TABLE IF NOT EXISTS Strassensegment(
 	Strasse_ID INTEGER REFERENCES Strasse(Strasse_ID)
 );
 
-CREATE TABLE IF NOT EXISTS Strassentyp(
-	Strassentyp_ID INTEGER PRIMARY KEY,
-	Strassentyp_Name VARCHAR (20),
-	Strasse_ID INTEGER REFERENCES Strasse(Strasse_ID)
+
+CREATE TABLE IF NOT EXISTS Typen(
+	Typen_ID INTEGER PRIMARY KEY,
+	Typen_Name VARCHAR (50),
+	Typen_Note INTEGER,
 );
 
 CREATE TABLE IF NOT EXISTS Zustand(
@@ -27,12 +34,7 @@ CREATE TABLE IF NOT EXISTS Zustand(
 	Zustand_Datum DATE,
 	Zustand_Erfasser VARCHAR (50),
 	Zustand_Begründung VARCHAR (100),
-	Strasse_ID INTEGER REFERENCES Strasse(Strasse_ID)
+	Strasse_ID INTEGER REFERENCES Strasse(Strasse_ID),
+	Typen_ID INTEGER REFERENCES Typen (Typen_ID)
 );
 
-CREATE TABLE IF NOT EXISTS Typen(
-	Typen_ID INTEGER PRIMARY KEY,
-	Typen_Name VARCHAR (50),
-	Typen_Note INTEGER,
-	Zustand_ID INTEGER REFERENCES Zustand(Zustand_ID)
-);

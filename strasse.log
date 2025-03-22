@@ -2,8 +2,15 @@
 2025-03-22 17:32:48,210-ERROR-Fehler bei der Datenbankverbindung: 
 2025-03-22 17:33:37,055-ERROR-Fehler bei der Datenbankverbindung: 
 2025-03-22 17:35:51,803-ERROR-Ein unerwarteter Fehler ist aufgetretten: 'name'
-2025-03-22 17:36:36,501-ERROR-Fehler bei der Datenbankverbindung: FEHLER:  Spalte »id« von Relation »strasse« existiert nicht
+2025-03-22 17:36:36,501-ERROR-Fehler bei der Datenbankverbindung: FEHLER:  Spalte ï¿½idï¿½ von Relation ï¿½strasseï¿½ existiert nicht
 LINE 1: INSERT INTO strasse (id, strassen_name) VALUES ('1','Poststr...
                              ^
 
 2025-03-22 17:37:04,950-INFO-Daten erfolgreich in die Datenbank importiert
+2025-03-22 18:10:58,636-ERROR-Fehler bei der Datenbankverbindung: FEHLER:  ungï¿½ltige Eingabesyntax fï¿½r Typ integer: ï¿½ï¿½
+LINE 1: ...strassen_name, strassentyp_id) VALUES ('1','Poststrasse','')
+                                                                    ^
+
+2025-03-22 18:12:31,943-ERROR-Fehler bei der Datenbankverbindung: FEHLER:  Einfï¿½gen oder Aktualisieren in Tabelle ï¿½strasseï¿½ verletzt Fremdschlï¿½ssel-Constraint ï¿½strasse_strassentyp_id_fkeyï¿½
+DETAIL:  Schlï¿½ssel (strassentyp_id)=(101) ist nicht in Tabelle ï¿½strassentypï¿½ vorhanden.
+

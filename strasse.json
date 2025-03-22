@@ -1,27 +1,33 @@
 [
     {
         "ID": "1",
-        "Name": "Poststrasse"
+        "Name": "Poststrasse",
+        "Typ_ID":"101"
     },
     {  
         "ID": "2",
-        "Name": "Strasse2"
+        "Name": "Strasse2",
+        "Typ_ID": "100"
     },
     {
         "ID": "3",
-        "Name": "Strasse3"
+        "Name": "Strasse3",
+        "Typ_ID": "100"
     },
     {
         "ID": "4",
-        "Name": "Strasse4"
+        "Name": "Strasse4",
+        "Typ_ID": "100"
     },
     {
         "ID": "5",
-        "Name": "Strasse5"
+        "Name": "Strasse5",
+        "Typ_ID": "103"
     },
     {   
         "ID": "6",
-        "Name": "Strasse6"
+        "Name": "Strasse6",
+        "Typ_ID": "106"
     }
 
 ]

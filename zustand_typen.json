@@ -1,0 +1,32 @@
+[
+    {
+        "ID": "1",
+        "Note": "1",
+        "Name": "Gut"
+    },
+    {
+        "ID": "2",
+        "Note": "2",
+        "Name": "Annehmbar"
+    },
+    {
+        "ID": "3",
+        "Note": "3",
+        "Name": "Ungenuegend"
+    },
+    {
+        "ID": "4",
+        "Note": "4",
+        "Name": "Schlecht"
+    },
+    {
+        "ID": "5",
+        "Note": "5",
+        "Name": "Alarmierend"
+    },
+    { 
+        "ID": "6",
+        "Note": "9",
+        "Name": "Keine Aussage"
+    }
+]

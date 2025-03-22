@@ -1,20 +1,19 @@
-"""Dieses Programm importiert Strassennamen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
+"""Dieses Programm importiert die Zustandstypen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
 
 # Import der Bibliotheken
 import json
-import requests
 import psycopg2
 import logging
 import config_db
 
 # Dateipfad
 
-file = "strasse.json"
+file = "zustand_typen.json"
 
 
 # Protokollierung konfigurieren
 
-logging.basicConfig(filename="strasse.log",
+logging.basicConfig(filename="zustand_typen.log",
                     level=logging.INFO,
                     format="%(asctime)s-%(levelname)s-%(message)s")
 
@@ -33,10 +32,12 @@ def store_data (data):
 
         for item in data:
             id = item["ID"]
+            note = item["Note"]
             name = item["Name"]
+
             cursor.execute(
-                f"INSERT INTO strasse (strasse_id, strassen_name) VALUES (%s,%s)",
-                (id, name)
+                f"INSERT INTO typen (typen_id, typen_name, typen_note) VALUES (%s,%s, %s)",
+                (id, name, note)
 ,            )
         conn.commit()
         cursor.close()
