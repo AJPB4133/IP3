@@ -14,3 +14,12 @@ LINE 1: ...strassen_name, strassentyp_id) VALUES ('1','Poststrasse','')
 2025-03-22 18:12:31,943-ERROR-Fehler bei der Datenbankverbindung: FEHLER:  Einfï¿½gen oder Aktualisieren in Tabelle ï¿½strasseï¿½ verletzt Fremdschlï¿½ssel-Constraint ï¿½strasse_strassentyp_id_fkeyï¿½
 DETAIL:  Schlï¿½ssel (strassentyp_id)=(101) ist nicht in Tabelle ï¿½strassentypï¿½ vorhanden.
 
+2025-03-31 20:18:41,119-ERROR-Fehler bei der Datenbankverbindung: FEHLER:  Spalte »strassentyp_id« von Relation »strasse« existiert nicht
+LINE 1: INSERT INTO strasse (strasse_id, strassen_name, strassentyp_...
+                                                        ^
+
+2025-03-31 20:21:55,780-ERROR-Fehler bei der Datenbankverbindung: FEHLER:  fehlerhafte Record-Konstante: »Erschliessungsstrassen«
+LINE 1: ...ssen_name, strasse_typ) VALUES ('1','Poststrasse','Erschlies...
+                                                             ^
+DETAIL:  Linke Klammer fehlt.
+

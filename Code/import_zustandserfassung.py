@@ -1,4 +1,4 @@
-"""Dieses Programm importiert Strassennamen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
+"""Dieses Programm importiert die Zustandstypen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
 
 # Import der Bibliotheken
 import json
@@ -8,12 +8,12 @@ import config_db
 
 # Dateipfad
 
-file = "strasse.json"
+file = "zustand_typen.json"
 
 
 # Protokollierung konfigurieren
 
-logging.basicConfig(filename="strasse.log",
+logging.basicConfig(filename="zustandserfassung.log",
                     level=logging.INFO,
                     format="%(asctime)s-%(levelname)s-%(message)s")
 
@@ -31,12 +31,19 @@ def store_data (data):
         cursor = conn.cursor()
 
         for item in data:
-            id = item["ID"]
-            name = item["Name"]
-            typ = item["Typ"]
+            Zustand = item["Zustand"]
+            Note = item["Zustand_Note"]
+            Segment = item["Segment"]
+            Erfasser_Name = item["Erfasser"]["Name"]
+            Erfasser_Vorname = item["Erfasser"]["Vorname"]
+            Datum = item["Datum"]
+            Notizen = item ["Notizen"]
+
+            print (Zustand)
+
             cursor.execute(
-                f"INSERT INTO strasse (strasse_id, strassen_name, strasse_typ) VALUES (%s,%s,%s)",
-                (id, name, typ)
+                f"INSERT INTO typen (Zustand_Datum, Zustand_Erfasser_N, Zustand_Erfasser_V, Zustand_Begründung, Zustand_Typ, Zustand_Note, S_ID) VALUES (%s,%s, %s, %s,%s,%s,%s)",
+                (Datum, Erfasser_Name, Erfasser_Vorname, Notizen, Zustand, Note, Segment)
 ,            )
         conn.commit()
         cursor.close()

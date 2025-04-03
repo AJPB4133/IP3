@@ -1,0 +1,57 @@
+DROP TABLE IF EXISTS Strasse CASCADE;
+DROP TABLE IF EXISTS Strassensegment CASCADE;
+DROP TABLE IF EXISTS Zustand CASCADE;
+
+
+DO $$
+BEGIN
+	BEGIN
+		CREATE TYPE STRASSENTYP AS ENUM ('Hochleistungsstrasse', 'Hauptverkehrsstrasse', 'Verbindungsstrasse', 'Sammelstrassen', 'Erschliessungsstrassen');
+	EXCEPTION WHEN  duplicate_object THEN
+		RAISE NOTICE 'Typ STRASSENTYP existiert bereits';
+	END;
+END $$;
+
+
+CREATE TABLE IF NOT EXISTS Strasse(
+	Strasse_ID INTEGER PRIMARY KEY,
+	Strassen_Name VARCHAR (100),
+	Strasse_Typ STRASSENTYP
+);
+		
+CREATE TABLE IF NOT EXISTS Strassensegment(
+	S_ID INTEGER PRIMARY KEY,
+	S_Geometrie GEOMETRY(LINESTRING, 2056) NOT NULL,
+	Strasse_ID INTEGER REFERENCES Strasse(Strasse_ID)
+);
+
+DO $$
+BEGIN
+	BEGIN
+		CREATE TYPE ZUSTANDTYP_NAME AS ENUM ('GUT', 'ANNEHMBAR', 'UNGENUEGEND', 'SCHLECHT', 'ALARMIEREND', 'KEINE AUSSAGE');
+	EXCEPTION WHEN  duplicate_object THEN
+		RAISE NOTICE 'Typ ZUSTANDTYP_NAME existiert bereits';
+	END;
+END $$;
+
+
+DO $$
+BEGIN
+	BEGIN
+		CREATE TYPE ZUSTANDTYP_NOTE AS ENUM ('1', '2', '3', '4', '5', '9');
+	EXCEPTION WHEN  duplicate_object THEN
+		RAISE NOTICE 'Typ ZUSTANDTYP_NOTE existiert bereits';
+	END;
+END $$;
+
+CREATE TABLE IF NOT EXISTS Zustand(
+	Zustand_ID SERIAL PRIMARY KEY,
+	Zustand_Datum DATE,
+	Zustand_Erfasser_N VARCHAR (50),
+	Zustand_Erfasser_V VARCHAR (50),
+	Zustand_Begründung VARCHAR (100),
+	Zustand_Typ ZUSTANDTYP_NAME,
+	Zustand_Note ZUSTANDTYP_NOTE,
+	S_ID INTEGER REFERENCES Strassensegment(S_ID)
+);
+

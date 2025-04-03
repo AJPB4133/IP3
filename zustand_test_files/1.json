@@ -1,0 +1,12 @@
+{
+    "Zustand": "SCHLECHT",
+    "Zustand_Note":"4",
+    "Segment": "500",
+    "Erfasser": 
+    {
+        "Name": "John",
+        "Vorname": "Snow"
+    },
+    "Datum": "01.04.2000",
+    "Notizen": ""
+}
