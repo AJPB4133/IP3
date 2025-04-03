@@ -34,3 +34,5 @@ LINE 1: INSERT INTO Strasse (strasse_id, strassen_name, strassetyp_I...
 2025-04-03 12:04:05,365-ERROR-Ein unerwarteter Fehler ist aufgetretten: 'Typ'
 2025-04-03 12:04:56,018-ERROR-Ein unerwarteter Fehler ist aufgetretten: 'Typ_ID'
 2025-04-03 12:05:57,373-INFO-Daten erfolgreich in die Datenbank importiert
+2025-04-03 15:21:55,635-INFO-Daten erfolgreich in die Datenbank importiert
+2025-04-03 15:38:43,005-INFO-Daten erfolgreich in die Datenbank importiert

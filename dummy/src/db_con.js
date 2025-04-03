@@ -13,15 +13,26 @@ const pool = new Pool({
 });
 
 app.post('/api/daten', async (req, res) => {
-  const { name, datum, text } = req.body;
+  const { name,vorname,  datum, text } = req.body;
   try {
-    await pool.query('INSERT INTO zustand (name, datum, text) VALUES ($1, $2, $3)', [name, datum, text]);
+    await pool.query('INSERT INTO Zustand (zustand_datum,zustand_erfasser_n,zustand_erfasser_v,zustand_begruendung, s_id,   ) VALUES ($1, $2, $3)', [name, datum, text]);
     res.send('Daten gespeichert');
   } catch (fehler) {
     console.error('Fehler beim Speichern der Daten:', fehler);
     res.status(500).send('Fehler beim Speichern der Daten');
   }
 });
+
+app.get('/api/kant_radroute', async (req, res) => {
+  try {
+    const antwort = await pool.query('SELECT id, geom FROM kant_radroute'); // Abfrage anpassen
+    res.json(antwort.rows);
+  } catch (fehler) {
+    console.error('Fehler beim Abrufen der Strassensegmente:', fehler);
+    res.status(500).send('Fehler beim Abrufen der Daten');
+  }
+});
+
 
 app.listen(5000, () => {
   console.log('Server läuft auf Port 5000');

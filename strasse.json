@@ -1,32 +1,37 @@
 [
     {
-        "ID": "100",
+        "ID": "1",
         "Name": "Poststrasse",
         "Typ_ID":"5"
     },
     {  
-        "ID": "200",
+        "ID": "2",
         "Name": "Strasse2",
         "Typ_ID": "5"
     },
     {
-        "ID": "300",
+        "ID": "3",
         "Name": "Strasse3",
         "Typ_ID": "4"
     },
     {
-        "ID": "400",
+        "ID": "4",
         "Name": "Strasse4",
         "Typ_ID": "5"
     },
     {
-        "ID": "500",
+        "ID": "5",
         "Name": "Strasse5",
         "Typ_ID": "5"
     },
     {   
-        "ID": "600",
+        "ID": "6",
         "Name": "Strasse6",
+        "Typ_ID": "3"
+    },
+    {   
+        "ID": "7",
+        "Name": "Strasse7",
         "Typ_ID": "3"
     }
 

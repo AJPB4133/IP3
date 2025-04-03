@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS Strasse(
 		
 CREATE TABLE IF NOT EXISTS Strassensegment(
 	s_id INTEGER PRIMARY KEY,
-	s_geometrie GEOMETRY(LINESTRING, 2056) NOT NULL,
+	s_geometrie GEOMETRY(MultiLineString, 2056) NOT NULL,
 	strasse_id INTEGER REFERENCES Strasse(strasse_id)
 );
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Zustand(
 	zustand_erfasser_n VARCHAR (50) NOT NULL,
 	zustand_erfasser_v VARCHAR (50) NOT NULL,
 	zustand_begruendung VARCHAR (100),
-	strasse_id INTEGER REFERENCES Strasse(strasse_id),
+	s_id INTEGER REFERENCES Strassensegment(s_id),
 	s_zustandstyp_id INTEGER REFERENCES Zustandstyp (s_zustandstyp_id)
 );
 
