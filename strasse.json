@@ -1,33 +1,33 @@
 [
     {
-        "ID": "1",
+        "ID": "100",
         "Name": "Poststrasse",
-        "Typ":"Erschliessungsstrassen"
+        "Typ_ID":"5"
     },
     {  
-        "ID": "2",
+        "ID": "200",
         "Name": "Strasse2",
-        "Typ": "Erschliessungsstrassen"
+        "Typ_ID": "5"
     },
     {
-        "ID": "3",
+        "ID": "300",
         "Name": "Strasse3",
-        "Typ_ID": "Erschliessungsstrassen"
+        "Typ_ID": "4"
     },
     {
-        "ID": "4",
+        "ID": "400",
         "Name": "Strasse4",
-        "Typ_ID": "Erschliessungsstrassen"
+        "Typ_ID": "5"
     },
     {
-        "ID": "5",
+        "ID": "500",
         "Name": "Strasse5",
-        "Typ_ID": "Erschliessungsstrassen"
+        "Typ_ID": "5"
     },
     {   
-        "ID": "6",
+        "ID": "600",
         "Name": "Strasse6",
-        "Typ_ID": "Verbindungsstrasse"
+        "Typ_ID": "3"
     }
 
 ]

@@ -1,0 +1,17 @@
+[
+    {
+        "Name": "Hochleistungsstrasse"
+    },
+    {  
+        "Name": "Hauptverkehrsstrassen"
+    },
+    {
+        "Name": "Verbindungsstrassen"
+    },
+    {
+        "Name": "Sammelstrassen"
+    },
+    {
+        "Name": "Erschliessungstrassen"
+    }
+]

@@ -6,35 +6,36 @@ DROP TABLE IF EXISTS Typen	CASCADE;
 
 
 CREATE TABLE IF NOT EXISTS Strassentyp(
-	Strassentyp_ID INTEGER PRIMARY KEY,
-	Strassentyp_Name VARCHAR (20),
+	strassentyp_ID SERIAL PRIMARY KEY,
+	strassentyp_name VARCHAR (50) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Strasse(
-	Strasse_ID INTEGER PRIMARY KEY,
-	Strassen_Name VARCHAR (100),
-	Strassentyp_ID INTEGER REFERENCES Strassentyp(Strassentyp_ID)
+	strasse_id INTEGER PRIMARY KEY,
+	strassen_name VARCHAR (100) NOT NULL,
+	strassentyp_ID INTEGER REFERENCES Strassentyp(strassentyp_ID)
 );
 		
 CREATE TABLE IF NOT EXISTS Strassensegment(
-	id INTEGER PRIMARY KEY,
-	S_Geometrie GEOMETRY(LINESTRING, 2056) NOT NULL,
-	Strasse_ID INTEGER REFERENCES Strasse(Strasse_ID)
+	s_id INTEGER PRIMARY KEY,
+	s_geometrie GEOMETRY(LINESTRING, 2056) NOT NULL,
+	strasse_id INTEGER REFERENCES Strasse(strasse_id)
 );
 
 
-CREATE TABLE IF NOT EXISTS Typen(
-	Typen_ID INTEGER PRIMARY KEY,
-	Typen_Name VARCHAR (50),
-	Typen_Note INTEGER,
+CREATE TABLE IF NOT EXISTS Zustandstyp(
+	s_zustandstyp_id SERIAL PRIMARY KEY,
+	s_zustandstyp_name VARCHAR (50) NOT NULL,
+	s_zustandstyp_note INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Zustand(
-	Zustand_ID INTEGER PRIMARY KEY,
-	Zustand_Datum DATE,
-	Zustand_Erfasser VARCHAR (50),
-	Zustand_Begründung VARCHAR (100),
-	Strasse_ID INTEGER REFERENCES Strasse(Strasse_ID),
-	Typen_ID INTEGER REFERENCES Typen (Typen_ID)
+	zustand_id SERIAL PRIMARY KEY,
+	zustand_datum DATE NOT NULL,
+	zustand_erfasser_n VARCHAR (50) NOT NULL,
+	zustand_erfasser_v VARCHAR (50) NOT NULL,
+	zustand_begruendung VARCHAR (100),
+	strasse_id INTEGER REFERENCES Strasse(strasse_id),
+	s_zustandstyp_id INTEGER REFERENCES Zustandstyp (s_zustandstyp_id)
 );
 

@@ -31,13 +31,12 @@ def store_data (data):
         cursor = conn.cursor()
 
         for item in data:
-            id = item["ID"]
             note = item["Note"]
             name = item["Name"]
 
             cursor.execute(
-                f"INSERT INTO typen (typen_id, typen_name, typen_note) VALUES (%s,%s, %s)",
-                (id, name, note)
+                f"INSERT INTO Zustandstyp (s_zustandstyp_name, s_zustandstyp_note) VALUES (%s,%s)",
+                (name, note,)
 ,            )
         conn.commit()
         cursor.close()
