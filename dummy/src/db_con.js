@@ -12,10 +12,10 @@ const pool = new Pool({
   port: 5432,
 });
 
-app.post('/api/daten', async (req, res) => {
-  const { name,vorname,  datum, text } = req.body;
+app.post('/api/zustand', async (req, res) => {
+  const { name,vorname,  datum, text, Segment, Zustand } = req.body;
   try {
-    await pool.query('INSERT INTO Zustand (zustand_datum,zustand_erfasser_n,zustand_erfasser_v,zustand_begruendung, s_id,   ) VALUES ($1, $2, $3)', [name, datum, text]);
+    await pool.query('INSERT INTO Zustand (zustand_datum,zustand_erfasser_n,zustand_erfasser_v,zustand_begruendung, s_id,s_zustandstyp_id   ) VALUES ($1, $2, $3, $4, $5, $6 )', [datum, name,vorname, text, Segment, Zustand]);
     res.send('Daten gespeichert');
   } catch (fehler) {
     console.error('Fehler beim Speichern der Daten:', fehler);

@@ -19,7 +19,31 @@ function DatenFormular() {
   };
 
   const sendeDaten = async () => {
-    // ... (deine sendeDaten-Funktion bleibt gleich)
+    try {
+      const antwort = await fetch('/api/zustand', { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ datum, name,vorname, text, Segment, Zustand }), 
+      });
+
+      if (antwort.ok) {
+        alert('Daten erfolgreich gesendet!');
+        setDatum('');
+        setName('');
+        setVorname('');
+        setText('');
+        setSegment('');
+        setZustand('');
+        setAnzeigenFormular(false);
+      } else {
+        alert('Fehler beim Senden der Daten.');
+      }
+    } catch (fehler) {
+      console.error('Fehler:', fehler);
+      alert('Ein unerwarteter Fehler ist aufgetreten.');
+    }
   };
 
   const zustandsOptionen = [
@@ -30,6 +54,18 @@ function DatenFormular() {
     { value: 'Alarmierend', label: 'Alarmierend' },
     { value: 'keine Angabe', label: 'keine Angabe' },
   ];
+
+  const segmente = [
+    { value: 87, label: 87},
+    { value: 108, label: 108},
+    { value: 152, label: 152},
+    { value: 162, label: 162},
+    { value: 344, label: 344},
+    { value: 353, label: 353},
+    { value: 363, label: 363},
+    { value: 364, label: 364},
+    { value: 500, label: 500},
+  ]
 
   return (
     <div>
@@ -48,7 +84,11 @@ function DatenFormular() {
             <label>Segment:</label>
             <select value={Segment} onChange={(e) => setSegment(e.target.value)} style={{ marginBottom: '10px' }}>
               <option value="">Segment auswählen</option>
-              {/* Hier füge die Optionen für Segmente ein */}
+              {segmente.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
             </select>
             <label>Zustand:</label>
             <select value={Zustand} onChange={(e) => setZustand(e.target.value)} style={{ marginBottom: '10px' }}>
