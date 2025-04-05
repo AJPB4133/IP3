@@ -1,7 +1,9 @@
 const express = require('express');
 const { Pool } = require('pg');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const pool = new Pool({
@@ -10,6 +12,17 @@ const pool = new Pool({
   database: 'IP3-GIS CDE',
   password: 'TeamLH44',
   port: 5432,
+});
+
+
+app.get('/api/kant_radroute', async (req, res) => {
+  try {
+    const antwort = await pool.query('SELECT id, geom FROM kant_radroute'); // Abfrage anpassen
+    res.json(antwort.rows);
+  } catch (fehler) {
+    console.error('Fehler beim Abrufen der Strassensegmente:', fehler);
+    res.status(500).send('Fehler beim Abrufen der Daten');
+  }
 });
 
 app.post('/api/zustand', async (req, res) => {
@@ -23,15 +36,6 @@ app.post('/api/zustand', async (req, res) => {
   }
 });
 
-app.get('/api/kant_radroute', async (req, res) => {
-  try {
-    const antwort = await pool.query('SELECT id, geom FROM kant_radroute'); // Abfrage anpassen
-    res.json(antwort.rows);
-  } catch (fehler) {
-    console.error('Fehler beim Abrufen der Strassensegmente:', fehler);
-    res.status(500).send('Fehler beim Abrufen der Daten');
-  }
-});
 
 
 app.listen(5000, () => {

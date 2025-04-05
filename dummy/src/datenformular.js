@@ -20,7 +20,7 @@ function DatenFormular() {
 
   const sendeDaten = async () => {
     try {
-      const antwort = await fetch('/api/zustand', { 
+      const antwort = await fetch('http://localhost:5000/api/zustand', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,12 +47,12 @@ function DatenFormular() {
   };
 
   const zustandsOptionen = [
-    { value: 'Gut', label: 'Gut' },
-    { value: 'Annehmbar', label: 'Annehmbar' },
-    { value: 'Ungenügend', label: 'Ungenügend' },
-    { value: 'Schlecht', label: 'Schlecht' },
-    { value: 'Alarmierend', label: 'Alarmierend' },
-    { value: 'keine Angabe', label: 'keine Angabe' },
+    { value: 1, label: 'Gut' },
+    { value: 2, label: 'Annehmbar' },
+    { value: 3, label: 'Ungenügend' },
+    { value: 4, label: 'Schlecht' },
+    { value: 5, label: 'Alarmierend' },
+    { value: 6, label: 'keine Angabe' },
   ];
 
   const segmente = [
