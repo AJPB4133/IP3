@@ -1,4 +1,4 @@
-"""Dieses Programm importiert die Zustandstypen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
+"""Dieses Programm importiert Strassennamen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
 
 # Import der Bibliotheken
 import json
@@ -8,12 +8,12 @@ import config_db
 
 # Dateipfad
 
-file = "daten\zustand_typen.json"
+file = "daten\strasse.json"
 
 
 # Protokollierung konfigurieren
 
-logging.basicConfig(filename="zustand_typen.log",
+logging.basicConfig(filename="strasse.log",
                     level=logging.INFO,
                     format="%(asctime)s-%(levelname)s-%(message)s")
 
@@ -22,7 +22,7 @@ logging.basicConfig(filename="zustand_typen.log",
 with open(file, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-# Verbindung zur Datenbank
+# Verbindung zur Datenbank und Dateneinlesen
 
 def store_data (data):
    
@@ -31,12 +31,12 @@ def store_data (data):
         cursor = conn.cursor()
 
         for item in data:
-            note = item["Note"]
+            id = item["ID"]
             name = item["Name"]
-
+            typ = item["Typ_ID"]
             cursor.execute(
-                f"INSERT INTO Zustandstyp (s_zustandstyp_name, s_zustandstyp_note) VALUES (%s,%s)",
-                (name, note,)
+                f"INSERT INTO Strasse (strasse_id, strassen_name, strassentyp_ID) VALUES (%s,%s,%s)",
+                (id, name, typ)
 ,            )
         conn.commit()
         cursor.close()

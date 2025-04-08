@@ -1,4 +1,4 @@
-"""Dieses Programm importiert die Zustandstypen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
+"""Dieses Programm importiert die Zustandserfassung in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden. Diese Datei dient nur zu Testzwecke. Sie stellt die Schnittstelle zwischen CDE und DB dar"""
 
 # Import der Bibliotheken
 import json
@@ -42,8 +42,8 @@ def store_data (data):
             print (Zustand)
 
             cursor.execute(
-                f"INSERT INTO typen (Zustand_Datum, Zustand_Erfasser_N, Zustand_Erfasser_V, Zustand_Begründung, Zustand_Typ, Zustand_Note, S_ID) VALUES (%s,%s, %s, %s,%s,%s,%s)",
-                (Datum, Erfasser_Name, Erfasser_Vorname, Notizen, Zustand, Note, Segment)
+                f"INSERT INTO typen (zustand_datum, zustand_erfasser_n, zustand_erfasser_v, zustand_begruendung, s_zustandstyp_id ,s_id) VALUES (%s,%s, %s,%s,%s,%s)",
+                (Datum, Erfasser_Name, Erfasser_Vorname, Notizen, Zustand, Segment)
 ,            )
         conn.commit()
         cursor.close()
