@@ -83,6 +83,8 @@ cd IP3
 npm install
 ```
 
+4. In der Datei `alpine_ace\src\network\network_config_template.js` die aktuelle IP Adresse eintragen und Datei in *network_config.js* umbenennen.
+
 5. React-App starten
 
 ```bash
@@ -100,7 +102,7 @@ Das Schema der DB findet sich unter _DB/db_erstellen.txt._ Schema in pgAdmin kop
 
 Für die Python und Javascript Programme gibt es je eine Datei, in der die Verbindungsinformationen gespeichert sind.
 
-Damit die bezogenen Daten per Python Script über die APIs gespeichert werden können, muss das **config_template.py** angepasst und in **config.py** umbenannt werden. Die Datei ist im Ordner `Import_DB`. Es müssen folgende Parameter geändert werden:
+Damit die bezogenen Daten per Python Script über die APIs gespeichert werden können, muss das **config_db_template.py** angepasst und in **config_db.py** umbenannt werden. Die Datei ist im Ordner `Import_DB`. Es müssen folgende Parameter geändert werden:
 
 ```py
 db_config = {
@@ -112,7 +114,7 @@ db_config = {
 }
 ```
 
-Damit die Daten in der React App mit der Express API von der Datenbank bezogen werden können, muss das **config_template.js** angepasst und in **config.js** umbenannt werden. Die Datei ist im Ordner `dummy\src`. Es müssen folgende Parameter geändert werden:
+Damit die Daten in der React App mit der Express API von der Datenbank bezogen werden können, muss das **config_db_template.js** angepasst und in **config.js** umbenannt werden. Die Datei ist im Ordner `dummy\src\import_db`. Es müssen folgende Parameter geändert werden:
 
 ```js
 module.exports = {
@@ -123,7 +125,15 @@ module.exports = {
   port: "portnumber", //Port der DB
 };
 ```
+## Datenbank
 
+1. Mit pgAdmin 4 eine neue Datenbank erstellen mit dem Namen: `IP3`
+2. Extension [postgis](https://postgis.net/) installieren.
+
+```sql
+CREATE EXTENSION postgis;
+CREATE EXTENSION pgrouting;
+```
 
 
 GIS/CDE Integration with Database

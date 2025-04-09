@@ -1,7 +1,7 @@
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
-const config_db = require("./config_db")
+const config_db = require("./import_db/config_db")
 
 const app = express();
 app.use(cors());

@@ -3,10 +3,9 @@
 
 import VectorSource from "ol/source/Vector";
 import GeoJSON from "ol/format/GeoJSON";
-import config from "./Network/network_config";
+import config from "./network/network_config";
 
 // WFS Anfrage-Funktion
-
 
 
 const geoserverWFSAnfrage = `${config.projectIPadress}:8080/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=`;
