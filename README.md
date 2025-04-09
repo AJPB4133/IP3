@@ -47,7 +47,6 @@ cd path/to/workspace
 conda create -n my_env python=3.9.21 -c conda-forge --file path/to/requirements.txt
 ```
 
-
 ### FME-Requirements
 
 FME Workbench 2024.0.1  oder aktueller. Kann auf der Webseite von [Safe Software heruntergeladen](https://fme.safe.com/downloads/) werden. Die Software ist Lizenzpflichtig.
@@ -63,6 +62,68 @@ Die Testumgebung wurde mit der Node version 18.18.0 getestet.
 ### GeoServer-Requirements
 
 Voraussetzung für die Benutzung der Testumgebung ist die GeoServer Version 2.21.4.  Hier ist die offizielle [Installationsanleitung](https://docs.geoserver.org/main/en/user/installation/index.html) für die verschieden Betriebssysteme.
+
+
+## Installation
+
+### Frontend
+
+Um die Testumgebung zum Laufen zu bringen, müssen folgende Schritte ausgeführt werden:
+
+1. neues Terminal öffnen -> als GitBash
+2. Ordner wechseln
+
+```bash
+cd IP3
+```
+
+3. npm Module installieren
+
+```bash
+npm install
+```
+
+5. React-App starten
+
+```bash
+npm start
+```
+### Backend
+
+Das Backend besteht aus vier Komponenten. Einem Datenbezugsteil (Python), einer Datenbank (Postgres inkl. Postgis), einem Node-Server und einem GeoServer der die Geodaten zur Verfügung stellt.
+
+#### Postgres inkl. Postgis
+
+Das Schema der DB findet sich unter _DB/db_erstellen.txt._ Schema in pgAdmin kopieren und ausführen.
+
+#### Datenbank Verbindungen
+
+Für die Python und Javascript Programme gibt es je eine Datei, in der die Verbindungsinformationen gespeichert sind.
+
+Damit die bezogenen Daten per Python Script über die APIs gespeichert werden können, muss das **config_template.py** angepasst und in **config.py** umbenannt werden. Die Datei ist im Ordner `Import_DB`. Es müssen folgende Parameter geändert werden:
+
+```py
+db_config = {
+    'host': 'host', #Hostname der DB
+    'port': 'port', #Port der DB
+    'database': 'database', #Name der DB
+    'user': 'user', #Username für die Verbindung zur DB
+    'password': 'password'  #Passwort des Username
+}
+```
+
+Damit die Daten in der React App mit der Express API von der Datenbank bezogen werden können, muss das **config_template.js** angepasst und in **config.js** umbenannt werden. Die Datei ist im Ordner `dummy\src`. Es müssen folgende Parameter geändert werden:
+
+```js
+module.exports = {
+  user: "username", // Username für die Verbindung zur DB
+  host: "hostname", // Hostname der DB
+  database: "databasename", //Name der DB
+  password: "password", //Passwort des Username
+  port: "portnumber", //Port der DB
+};
+```
+
 
 
 GIS/CDE Integration with Database
