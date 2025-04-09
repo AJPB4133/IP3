@@ -1,18 +1,13 @@
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
+const config_db = require("./config_db")
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'IP3-GIS CDE',
-  password: 'TeamLH44',
-  port: 5432,
-});
+const pool = new Pool(config_db);
 
 
 app.get('/api/kant_radroute', async (req, res) => {
