@@ -16,7 +16,7 @@ import { SwisstopoLayer } from "./swisstopoLayer.js";
 
 const Karte = () => {
     const mapRef = useRef(null);
-    const [setSelectedFeature, setSelectedFeature] = useState(null);
+    const [setselectedFeature, setSelectedFeature] = useState(null);
 
 
     useEffect (() => {
@@ -28,7 +28,7 @@ const Karte = () => {
         // Strassensegmenlayer Style aus kartenlayerstyle.js
         const strassensegmentLayer = new VectorLayer({
             source: strassensegmenteSource,
-            style: strassensegmentLayerStyle,
+            //style: strassensegmentLayerStyle,
         });
 
 
@@ -51,7 +51,7 @@ const Karte = () => {
              ]),
             layers: [
                 WMSswissimageLayer,
-                strassensegmentLayer
+                //strassensegmentLayer
             ],
             target: mapRef.current,
             view: new View({
@@ -64,5 +64,15 @@ const Karte = () => {
         }),
 
     });
+
+
+
     }, []);
+
+    
+
 }
+
+
+
+export default Karte;
