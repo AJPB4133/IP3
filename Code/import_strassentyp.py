@@ -4,11 +4,11 @@
 import json
 import psycopg2
 import logging
-import configdb
+import config_db
 
 # Dateipfad
 
-file = "daten\strassentyp.json"
+file = "daten/strassentyp.json"
 
 
 # Protokollierung konfigurieren
