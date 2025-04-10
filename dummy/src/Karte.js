@@ -1,4 +1,7 @@
-/* Karte mit GIS Daten */
+// -------------------------------------------------------
+// Dieses Script ist für die Darstellung der GIS-Daten in 
+// einer Hintergrundkarte zuständig
+// -------------------------------------------------------
 
 import React, { useEffect, useRef, useState } from "react";
 import "ol/ol.css"; // Import OpenLayers CSS
@@ -13,6 +16,8 @@ import theme from "./theme";
 import { ZoomToExtent, defaults as defaultControls } from "ol/control.js";
 import { createVectorSource } from "./kartenWFS.js";
 import { SwisstopoLayer } from "./swisstopoLayer.js";
+import { strassensegmenteStyle } from "./kartenStyles.js";
+
 
 const Karte = () => {
     const mapRef = useRef(null);
@@ -28,7 +33,7 @@ const Karte = () => {
         // Strassensegmenlayer Style aus kartenlayerstyle.js
         const strassensegmentLayer = new VectorLayer({
             source: strassensegmenteSource,
-            //style: strassensegmentLayerStyle,
+            style: strassensegmentLayerStyle,
         });
 
 
@@ -51,7 +56,7 @@ const Karte = () => {
              ]),
             layers: [
                 WMSswissimageLayer,
-                //strassensegmentLayer
+                strassensegmentLayer
             ],
             target: mapRef.current,
             view: new View({
