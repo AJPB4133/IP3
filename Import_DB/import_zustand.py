@@ -1,4 +1,4 @@
-"""Dieses Programm importiert die Zustandsklassen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
+"""Dieses Skript importiert die Zustandsklassen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
 
 # Import der Bibliotheken
 import json
