@@ -1,4 +1,4 @@
-"""Dieses Programm importiert die Zustandstypen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
+"""Dieses Programm importiert die Zustandsklassen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
 
 # Import der Bibliotheken
 import json
@@ -35,6 +35,7 @@ def store_data (data):
             name = item["Name"]
 
             cursor.execute(
+                # SQL Abfrage um die Daten in die Datenbank einzulesen
                 f"INSERT INTO Zustandstyp (s_zustandstyp_name, s_zustandstyp_note) VALUES (%s,%s)",
                 (name, note,)
 ,            )

@@ -33,6 +33,7 @@ def store_data (data):
         for item in data:
             name = item["Name"]
             cursor.execute(
+                # SQL Abfrage um die Daten in die Datenbank einzulesen
                 f"INSERT INTO Strassentyp (strassentyp_name) VALUES (%s)",
                 (name,)
 ,            )

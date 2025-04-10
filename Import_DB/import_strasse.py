@@ -35,7 +35,8 @@ def store_data (data):
             name = item["Name"]
             typ = item["Typ_ID"]
             cursor.execute(
-                f"INSERT INTO Strasse (strasse_id, strassen_name, strassentyp_ID) VALUES (%s,%s,%s)",
+                # SQL Abfrage um die Daten in die Datenbank einzulesen
+                f"INSERT INTO Strasse (strasse_id, strassen_name, strassentyp_ID) VALUES (%s,%s,%s)",  
                 (id, name, typ)
 ,            )
         conn.commit()
@@ -49,7 +50,7 @@ def store_data (data):
     except Exception as e:
         logging.error(f"Ein unerwarteter Fehler ist aufgetretten: {e}")
 
-
+# Führt die Funktion aus. um die DAten in die Datenbankk zu speichern. 
 store_data(data)
     
 
