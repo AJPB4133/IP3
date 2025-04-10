@@ -12,7 +12,7 @@ import VectorLayer from "ol/layer/Vector";
 import { ThemeProvider } from "@mui/material/styles";
 import { Projection } from "ol/proj";
 import Box from "@mui/material/Box";
-import theme from "./theme";
+//import theme from "./theme";
 import { ZoomToExtent, defaults as defaultControls } from "ol/control.js";
 import { createVectorSource } from "./kartenWFS.js";
 import { SwisstopoLayer } from "./swisstopoLayer.js";
@@ -33,7 +33,7 @@ const Karte = () => {
         // Strassensegmenlayer Style aus kartenlayerstyle.js
         const strassensegmentLayer = new VectorLayer({
             source: strassensegmenteSource,
-            style: strassensegmentLayerStyle,
+            style: strassensegmenteStyle,
         });
 
 
@@ -70,14 +70,79 @@ const Karte = () => {
 
     });
 
+    // Funktion wenn auf ein Vektorlayer geklickt wird
+    const handleClick = (event) => {
+        map.forEachFeatureAtPixel(event.pixel, (feature) => {
+            console.log('Feature Eigenschaften:', feature.getProperties());
+
+            // Maximal sowie Minimal Zoomsstufe einstellen
+            const minZoomLevel = 8; // mindestzoomstufe
+            const maxZoomLevel = 18; // maxzoomstufe
+            map.getView().setMinZoom(minZoomLevel);
+            map.getView().setMaxZoom(maxZoomLevel);
+
+            // Zoom auf das ausgewählte Feature
+            map.getView().fit(feature.getGeometry().getExtent(),{
+                duration: 500,
+                padding: [1000,1000,1000,1000],
+            });
+
+            setSelectedFeature(feature.getProperties());  
+
+
+
+        });
+    };
+
+    // Event-Handler für das Klicken auf die Features hinzufügen
+
+    map.on('click', handleClick);
+
+    // Anpassung der Fenstergrösse
+
+    window.addEventListener('resize', () => {
+        map.updateSize();
+    });
+
+    return () =>{
+        map.on('click', handleClick);
+        window.removeEventListener('resize', () =>{
+            map.updateSize();
+        });
+    };
+
 
 
     }, []);
 
-    
+    return (
+        <Box
+            display="flex"
+            flexWrap="wrap"
+            justifyContent="left"
+            alignItems="flex-start"
+            gap={2}
+            sx={{
+                width: "95vw", // Volle Breite der Elternbox
+                borderRadius: "3vw",
+                bgcolor: "p_white.main",
+                position: "relative",
+                overflowY: "auto",
+            }}
+        >
+            <Box
+                ref={mapRef}
+                sx={{
+                    flexGrow: 1,
+                    borderRadius: '3vw',
+                    overflow: 'hidden',
+                    bgcolor: 'inherit',
 
-}
+                }}
+            ></Box>
+        </Box>    
+    );
 
-
+};
 
 export default Karte;

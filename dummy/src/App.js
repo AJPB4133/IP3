@@ -1,5 +1,6 @@
 import React from 'react';
 import DatenFormular from './datenformular'; // Pfad zu deiner DatenFormular-Komponente
+import Karte from './Karte';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <div>
       <h1>Zustandserfassung</h1>
       <DatenFormular />
+      <Karte/>
       <button onClick={handleVerbindenKlick}>Mit Datenbank verbinden</button>
   
     </div>
