@@ -6,8 +6,7 @@ Es wird ein Konzept für eine direkte GIS-Anbindung and das CDE sowie ein protot
 - direkte Verbindung zu einem GIS über ein Räumliches Datenbank System
 - Zustanderfassung der Strassensegmente
 
-
-## Rewuirements
+## Requirements
 
 ### Repository lokal klonen
 
@@ -27,7 +26,7 @@ git clone https://github.com/AJPB4133/IP3.git
 
 ### Python-Requirements
 
-Folgende Python-Module müssen für das Backend Installiert werden:
+Folgende Python-Module müssen für das Backend installiert werden:
 
 - Python 3.9.20
 - psycopg2
