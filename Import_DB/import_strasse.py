@@ -1,4 +1,4 @@
-"""Dieses Skript importiert Strassennamen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
+"""Dieser Code importiert Strassennamen in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden"""
 
 # Import der Bibliotheken
 import json

@@ -38,7 +38,7 @@ const Karte = () => {
 
 
         //Definition des Kartenextents für WMS/WMTS
-        const extent = [2420000, 130000, 2900000, 1350000];
+        const extent = [2420000, 1300000, 2900000, 1350000];
         // WMS Winterlandeskarte holen mit der Funktion SwisstopoLayer aus dem File swisstopoLayer.js
         const WMSswissimageLayer = SwisstopoLayer(extent);
 
