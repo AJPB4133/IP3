@@ -1,58 +1,27 @@
 import React from 'react';
-import DatenFormular from './datenformular'; // Pfad zu deiner DatenFormular-Komponente
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import DatenFormular from './datenformular';
 import Karte from './Karte';
-import { Box } from '@mui/material';
+import Kart from './mape_test';
+
+
 
 
 function App() {
-  //const handleVerbindenKlick = async () => {
-  //  try {
-  //    const antwort = await fetch('http://localhost:5000/api/kant_radroute');
-  //    if (!antwort.ok) {
-  //      throw new Error(`HTTP error! status: ${antwort.status}`);
-  //    }
-  //    const daten = await antwort.json();
-  //    console.log('Daten erfolgreich vom Backend abgerufen:', daten);
-  //    alert('Verbindung zur Datenbank erfolgreich!');
-  //  } catch (fehler) {
-  //    console.error('Fehler beim Verbinden mit dem Backend:', fehler);
-  //    alert('Fehler beim Verbinden mit der Datenbank.');
-  //  }
-  //};
-
   return (
-    <Box
-    sx={{
-        display:'flex',
-        flexDirection:'column',
-        width:'100vw',
-        height: '50vw',
-        alignItems: 'flex-start'
-    }}
-    >
-      <Box
-        sx={{
-          flex: 1,
-          padding:2,
-          bgcolor: 'p_white.main',
-        }}
-        >
+    <Grid container sx={{ width: '100vw', height: '100vh' }}>
+      <Grid item xs={12} md={12}>
+        <Box sx={{ padding: 2, bgcolor: 'p_white.main' }}>
           <DatenFormular />
-      </Box>
-      <Box
-      sx={{
-        flex: 1,
-        padding:2,
-        bgcolor: 'grey.200',
-        overflow: 'hidden',
-      }}
-      >
-        <Karte />
-      </Box>
-    </Box>
-
-
-
+        </Box>
+      </Grid>
+      <Grid item xs={12} md={12} sx={{ flexGrow: 1 }}> {/* Wichtig für die Kartenbreite */}
+        <Box sx={{ flexGrow: 1, bgcolor: 'grey.200', height: 'calc(100vh - 68px)' }}>
+          <Karte />
+        </Box>
+      </Grid>
+    </Grid>
   );
 }
 

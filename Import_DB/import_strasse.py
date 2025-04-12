@@ -25,6 +25,32 @@ with open(file, "r", encoding="utf-8") as f:
 # Verbindung zur Datenbank und Dateneinlesen
 
 def store_data (data):
+
+
+    '''Speichert die übergebenen Daten in die Datenbanktabelle 'Strasse'.
+
+    Diese Funktion stellt eine Verbindung zur PostgreSQL-Datenbank her,
+    iteriert durch die übergebenen Daten und fügt jeden Datensatz
+    in die Tabelle 'Strasse' ein.
+
+    
+    Args:
+        data (list of dict): Eine Liste von Dictionaries, wobei jedes Dictionary die Schlüssel "ID", "Name" und "Typ_ID" enthalten soll,
+                            die den Spalten "strasse_id", "strassen_name" und "strassentyp_ID" in der Datenbank entsprechen.
+        
+
+    Returns:
+        None
+
+    Raises:
+        psycopg2.Error: Wenn ein Fehler bei der Datenbankverbindung oder
+                        beim Ausführen der SQL-Abfrage auftritt.
+        Exception: Wenn ein unerwarteter Fehler während des Prozesses auftritt.
+                   Dies kann beispielsweise ein Fehler beim Zugriff auf
+                   die Daten in den Dictionaries sein
+
+    
+    '''
    
     try:
         conn = psycopg2.connect(**config_db.db_config)

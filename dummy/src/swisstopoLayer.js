@@ -16,7 +16,7 @@ export function SwisstopoLayer(extent) {
       projection: "EPSG:2056",
       params: {
         // Layer-URL
-        LAYERS: "ch.swisstopo.images-swissimage-dop10.metadata",
+        LAYERS: "ch.swisstopo.swissimage",
         FORMAT: "image/jpeg",
       },
       serverType: "mapserver",

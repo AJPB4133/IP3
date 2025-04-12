@@ -8,7 +8,8 @@ import config from "./network/network_config";
 // WFS Anfrage-Funktion
 
 
-const geoserverWFSAnfrage = `${config.projectIPadress}:8080/geoserver/IP3/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=`;
+//const geoserverWFSAnfrage = `${config.projectIPadress}:8080/geoserver/IP3/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=`;
+const geoserverWFSAnfrage = `http://localhost:8080/geoserver/IP3/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=`;
 const geoserverWFSOutputFormat = "&outputFormat=application/json";
 
 export function createVectorSource(Abfrage, bboxStrategy) {
