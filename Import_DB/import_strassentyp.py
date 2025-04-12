@@ -26,17 +26,17 @@ with open(file, "r", encoding="utf-8") as f:
 
 def store_data (data):
 
-    '''Speichert die übergebenen Strassentyp-Namen in die Datenbanktabelle 'Strassentyp'.
+    '''Speichert die übergebenen Strassentyp-Namen in die Datenbanktabelle "Strassentyp".
 
     Diese Funktion baut eine Verbindung zur PostgreSQL-Datenbank auf,
     iteriert durch die übergebene Liste von Daten und fügt jeden eindeutigen
-    'Name'-Wert als neuen Eintrag in die Tabelle 'Strassentyp' ein.
+    "Name"-Wert als neuen Eintrag in die Tabelle "Strassentyp" ein.
     
 
     Args:
         data (list of dict): Eine Liste von Dictionaries, wobei jedes Dictionary
-                             einen Schlüssel 'Name' enthalten sollte, dessen Wert
-                             als 'strassentyp_name' in die Datenbank eingefügt wird.
+                             einen Schlüssel "Name" enthalten sollte, dessen Wert
+                             als "strassentyp_name" in die Datenbank eingefügt wird.
 
     Returns:
         None
@@ -46,7 +46,7 @@ def store_data (data):
                         beim Ausführen der SQL-Abfrage auftritt.
         Exception: Wenn ein unerwarteter Fehler während des Prozesses auftritt.
                    Dies kann beispielsweise ein Fehler beim Zugriff auf
-                   den Schlüssel 'Name' in den Dictionaries sein.
+                   den Schlüssel "Name" in den Dictionaries sein.
 
     '''
 

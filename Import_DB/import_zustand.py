@@ -25,6 +25,34 @@ with open(file, "r", encoding="utf-8") as f:
 # Verbindung zur Datenbank
 
 def store_data (data):
+
+    '''Speichert die übergebenen Zustandsinformationen in die Datenbanktabelle "Zustandstyp".
+
+    Diese Funktion stellt eine Verbindung zur PostgreSQL-Datenbank her,
+    iteriert durch die übergebene Liste von Daten und fügt für jeden Eintrag
+    einen neuen Datensatz in die Tabelle "Zustandstyp" ein. Es wird erwartet,
+    dass jedes Dictionary in der Liste die Schlüssel "Note" und "Name" enthält,
+    die den Spalten "s_zustandstyp_note" und "s_zustandstyp_nam"' in der
+    Datenbank entsprechen.
+
+    Args:
+        data (list of dict): Eine Liste von Dictionaries, wobei jedes Dictionary
+                             die Schlüssel "Note" und "Name" enthalten sollte.
+                             Der Wert unter "Name" wird in die Spalte
+                             "s_zustandstyp_name" und der Wert unter "Note" in die
+                             Spalte "s_zustandstyp_note" eingefügt.
+
+    Returns:
+        None
+
+    Raises:
+        psycopg2.Error: Wenn ein Fehler bei der Datenbankverbindung oder
+                        beim Ausführen der SQL-Abfrage auftritt.
+        Exception: Wenn ein unerwarteter Fehler während des Prozesses auftritt.
+                   Dies kann beispielsweise ein Fehler beim Zugriff auf die
+                   Schlüssel "Note" oder "Name" in den Dictionaries sein.
+    '''
+
    
     try:
         conn = psycopg2.connect(**config_db.db_config)

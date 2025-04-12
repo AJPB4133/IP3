@@ -1,4 +1,5 @@
-"""Dieses Skript importiert die Zustandserfassung in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden. Diese Datei dient nur zu Testzwecke. Sie stellt die Schnittstelle zwischen CDE und DB dar"""
+"""Dieses Skript importiert die Zustandserfassung in die Datenbank, dafür müssen die Daten in einem JSON-File abgespeichert werden. 
+Diese Datei dient nur zu Testzwecke. Sie stellt die Schnittstelle zwischen CDE und DB dar"""
 
 # Import der Bibliotheken
 import json
@@ -25,6 +26,32 @@ with open(file, "r", encoding="utf-8") as f:
 # Verbindung zur Datenbank
 
 def store_data (data):
+
+    '''Speichert Zustandsdaten in die Datenbanktabelle 'typen'.
+
+    Diese Funktion stellt eine Verbindung zur PostgreSQL-Datenbank her,
+    iteriert durch die übergebene Liste von Daten und fügt für jeden Eintrag
+    einen neuen Datensatz in die Tabelle 'typen' ein. Es wird erwartet,
+    dass jedes Dictionary in der Liste die Schlüssel "Zustand", "Zustand_Note",
+    "Segment", "Erfasser" (mit Unterschlüsseln "Name" und "Vorname"), "Datum"
+    und "Notizen" enthält.
+
+    Args:
+        data (list of dict): Eine Liste von Dictionaries, wobei jedes Dictionary
+                             die erwarteten Schlüssel enthalten muss. Die Werte
+                             werden den entsprechenden Spalten in der Tabelle
+                             "typen" zugeordnet.
+
+    Returns:
+        None
+
+    Raises:
+        psycopg2.Error: Wenn ein Fehler bei der Datenbankverbindung oder
+                        beim Ausführen der SQL-Abfrage auftritt.
+        Exception: Wenn ein unerwarteter Fehler während des Prozesses auftritt.
+                   Dies kann beispielsweise ein Fehler beim Zugriff auf die
+                   erwarteten Schlüssel in den Dictionaries sein.
+    '''
    
     try:
         conn = psycopg2.connect(**config_db.db_config)
