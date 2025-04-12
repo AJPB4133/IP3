@@ -25,3 +25,5 @@ yarn-error.log*
 
 src/config_db.js
 src/network/network_config.js
+
+package-lock.json
