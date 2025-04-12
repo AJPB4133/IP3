@@ -1,1 +1,2 @@
+-- Dieser Code wird verwendet um die extionsion PostGIS in die PostgreSQL-Datenbank hinzuzufügen. Damit kann die PostgreSQL-Datenbank räumliche Daten speichern.
 CREATE EXTENSION postgis;
