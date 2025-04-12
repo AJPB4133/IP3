@@ -1,34 +1,36 @@
+-- Dieser Code erstellt das physische Datenbankmodell in PostgreSQL.
+
 DROP TABLE IF EXISTS Strasse CASCADE;
 DROP TABLE IF EXISTS Strassensegment CASCADE;
 DROP TABLE IF EXISTS Strassentyp CASCADE;
 DROP TABLE IF EXISTS Zustand CASCADE;
 DROP TABLE IF EXISTS Typen	CASCADE;
 
-
+-- erstellt die Tabelle Strassentyp
 CREATE TABLE IF NOT EXISTS Strassentyp(
 	strassentyp_ID SERIAL PRIMARY KEY,
 	strassentyp_name VARCHAR (50) NOT NULL
 );
-
+-- erstellt die Tabelle Strasse
 CREATE TABLE IF NOT EXISTS Strasse(
 	strasse_id INTEGER PRIMARY KEY,
 	strassen_name VARCHAR (100) NOT NULL,
 	strassentyp_ID INTEGER REFERENCES Strassentyp(strassentyp_ID)
 );
-		
+-- erstellt die Tabelle Strassensegment		
 CREATE TABLE IF NOT EXISTS Strassensegment(
 	s_id INTEGER PRIMARY KEY,
 	s_geometrie GEOMETRY(MultiLineString, 2056) NOT NULL,
 	strasse_id INTEGER REFERENCES Strasse(strasse_id)
 );
 
-
+-- erstellt die Tabelle Zustandstypen
 CREATE TABLE IF NOT EXISTS Zustandstyp(
 	s_zustandstyp_id SERIAL PRIMARY KEY,
 	s_zustandstyp_name VARCHAR (50) NOT NULL,
 	s_zustandstyp_note INTEGER NOT NULL
 );
-
+-- erstellt die Tabelle Zustand
 CREATE TABLE IF NOT EXISTS Zustand(
 	zustand_id SERIAL PRIMARY KEY,
 	zustand_datum DATE NOT NULL,
