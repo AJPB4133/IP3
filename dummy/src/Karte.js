@@ -11,7 +11,7 @@ import { bbox as bboxStrategy } from "ol/loadingstrategy";
 import VectorLayer from "ol/layer/Vector";
 import { Projection } from "ol/proj";
 import Box from "@mui/material/Box";
-import { ZoomToExtent, defaults as defaultControls } from "ol/control.js";
+
 import { createVectorSource } from "./kartenWFS.js";
 import { SwisstopoLayer } from "./swisstopoLayer.js";
 import { strassensegmenteStyle } from "./kartenStyles.js";
@@ -20,7 +20,7 @@ import { strassensegmenteStyle } from "./kartenStyles.js";
 
 const Karte = () => {
     const mapRef = useRef(null);
-    const [setselectedFeature, setSelectedFeature] = useState(null);
+  
 
 
     useEffect (() => {
@@ -61,15 +61,15 @@ const Karte = () => {
         }),
 
     });
-
+   
     }, []);
 
-    return (
-         <div>
-          <div ref={mapRef} style={{ height: "100vh", width: "100%" }}/>
-          </div>
-         );
 
-};
+    return (
+        <div>
+          <div ref={mapRef} style={{ height: "100vh", width: "100%" }} />
+        </div>
+      );
+    };
 
 export default Karte;
