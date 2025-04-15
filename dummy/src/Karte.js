@@ -1,6 +1,6 @@
 // -------------------------------------------------------
 // Dieses Script ist für die Darstellung der GIS-Daten in 
-// einer Hintergrundkarte zuständig
+// einer Hintergrundkarte zuständig.
 // -------------------------------------------------------
 
 import React, { useEffect, useRef, useState } from "react";
@@ -20,9 +20,6 @@ import { strassensegmenteStyle } from "./kartenStyles.js";
 
 const Karte = () => {
     const mapRef = useRef(null);
-  
-
-
     useEffect (() => {
         // WFS Anfrage für alle Strassensegmente aus KartenWFS.js
         const strassensegmentSource = createVectorSource ('strassensegment', bboxStrategy);
@@ -37,10 +34,10 @@ const Karte = () => {
 
         //Definition des Kartenextents für WMS/WMTS
         const extent = [2619675, 1263843, 2621828, 1265690];
-        // WMS Winterlandeskarte holen mit der Funktion SwisstopoLayer aus dem File swisstopoLayer.js
+        // WMS SwissImage holen mit der Funktion SwisstopoLayer aus dem File swisstopoLayer.js
         const WMSswissimageLayer = SwisstopoLayer(extent);
 
-        // Layer Reihenfolge festlegen, 0 ist zuunterst
+        // Layer Reihenfolge festlegen
         WMSswissimageLayer.setZIndex(0);
         strassensegmentLayer.setZIndex(1);
 
