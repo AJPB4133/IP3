@@ -1,8 +1,10 @@
-// config.js
+/*-------------------------------------------------------------------
+  Dieser Code stellt die die Verbindung mit der Postgres-Datenbank her.
+---------------------------------------------------------------------*/
 module.exports = {
-    user: "username",
-    host: "hostname",
-    database: "databasename",
-    password: "password",
-    port: "portnumber",
+    user: "username", // Benutzername
+    host: "hostname", // Hostname
+    database: "databasename", // Datenbankname
+    password: "password", // Password für die Datenbank
+    port: "portnumber", // Portnumber auf der die Datenbank erreicht werden kann.
   };
