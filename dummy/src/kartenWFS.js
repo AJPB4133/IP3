@@ -1,7 +1,7 @@
-//---------------------------------------
-// WFS-Anfrage für die Karte,
-// Code from Alpine_Ace
-//---------------------------------------
+/*---------------------------------------
+  WFS-Anfrage für die Karte,
+  Code from Alpine_Ace
+  ---------------------------------------*/
 
 import VectorSource from "ol/source/Vector";
 import GeoJSON from "ol/format/GeoJSON";

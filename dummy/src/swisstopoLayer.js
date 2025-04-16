@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------
     Dieser Code erstellt mithilfe von OpenLayers 
     eine WMS-Kachelschicht von swisstopo. In diesem
-   Beispiel wird die Schicht "ch.swisstopo.swissimage" verwendet
+    Beispiel wird die Schicht "ch.swisstopo.swissimage" verwendet
   ---------------------------------------------------------------*/
 import TileLayer from "ol/layer/Tile"; 
 import { TileWMS } from "ol/source";
