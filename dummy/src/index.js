@@ -1,3 +1,7 @@
+/*------------------------------------------------------------
+  Dieser Code wird für die das rendering der Webapp verwendet.
+-------------------------------------------------------------*/
+
 import React from 'react';
 import ReactDOMClient from 'react-dom/client';
 import '@fontsource/roboto/300.css';
