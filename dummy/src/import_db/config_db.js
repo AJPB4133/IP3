@@ -1,4 +1,6 @@
-// Dieser Code stellt die die Verbindung mit der Postgres-Datenbank her
+/*-------------------------------------------------------------------
+  Dieser Code stellt die die Verbindung mit der Postgres-Datenbank her.
+---------------------------------------------------------------------*/
 module.exports = {
     user: "postgres", // username für die Verbindung zur DB
     host: "localhost", // Hostname der DB
