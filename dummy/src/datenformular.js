@@ -26,6 +26,7 @@ function DatenFormular() {
     setAnzeigenFormular(false);
   };
 
+  // sendet Daten über API in die Datenbank
   const sendeDaten = async () => {
     try {
       const antwort = await fetch('http://localhost:5000/api/zustand', { 
@@ -54,6 +55,7 @@ function DatenFormular() {
     }
   };
 
+  // Zustandsoptionen für das Dropdown-Menu Strassensegmente
   const zustandsOptionen = [
     { value: 1, label: 'Gut' },
     { value: 2, label: 'Annehmbar' },
@@ -63,6 +65,7 @@ function DatenFormular() {
     { value: 6, label: 'keine Angabe' },
   ];
 
+  // Strassensegmente-ID für das Dropdown-Menu Strassensegmente
   const segmente = [
     { value: 87, label: 87},
     { value: 108, label: 108},
