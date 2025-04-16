@@ -20,7 +20,7 @@ function Modal({ children, onClose }) {
         alignItems: 'center',
         zIndex: 1100, 
       }}
-      onClick={onClose} // Optional: Schließt den Modal beim Klick außerhalb
+      onClick={onClose} // Optional: Schliesst den Modal beim Klick außerhalb
     >
       <div
         style={{
@@ -30,7 +30,7 @@ function Modal({ children, onClose }) {
           position: 'relative',
           zIndex: 1200, 
         }}
-        onClick={(e) => e.stopPropagation()} // Verhindert Schließen durch Klick im Modal
+        onClick={(e) => e.stopPropagation()} // Verhindert Schliessen durch Klick im Modal
       >
         <button
           style={{ position: 'absolute', top: '10px', right: '10px' }}
