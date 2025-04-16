@@ -1,5 +1,6 @@
 /*------------------------------------------------------------
-  Dieser Code wird für die das rendering der Webapp verwendet.
+  Dieser Code wird für die Darstellung und Anordnung der einzelnen
+  Elemente verwendet.
 -------------------------------------------------------------*/
 
 import React from 'react';
