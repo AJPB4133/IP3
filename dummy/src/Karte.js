@@ -1,7 +1,7 @@
-// -------------------------------------------------------
-// Dieses Script ist für die Darstellung der GIS-Daten in 
-// einer Hintergrundkarte zuständig.
-// -------------------------------------------------------
+/* -------------------------------------------------------
+    Dieses Script ist für die Darstellung der GIS-Daten in 
+    einer Hintergrundkarte zuständig.
+ -------------------------------------------------------*/
 
 import React, { useEffect, useRef, useState } from "react";
 import "ol/ol.css"; 
