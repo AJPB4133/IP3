@@ -1,3 +1,7 @@
+/*------------------------------------------------------------
+  Dieser Code wird für die das rendering der Webapp verwendet.
+-------------------------------------------------------------*/
+
 import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
