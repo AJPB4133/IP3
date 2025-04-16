@@ -1,5 +1,5 @@
 # IP3: Integration BIM UND GIS
-Diese Repository untersucht die Integration von BIM und GIS zur Optimierung des Strassenunterhaltungsmanagements. Der Fokus liegt dabei auf der Nutzung des Common Data Environment (CDE) Dalux in Verbindung mit SiteWalk (DaluxField). 
+Dieses Repository untersucht die Integration von BIM und GIS zur Optimierung des Strassenunterhaltungsmanagements. Der Fokus liegt dabei auf der Nutzung des Common Data Environment (CDE) Dalux in Verbindung mit SiteWalk (DaluxField). 
 Es wird ein Konzept für eine direkte GIS-Anbindung and das CDE sowie ein prototypisches Framework inklusive Testumgebung vorgestellt. Ziel ist die Generierung verbesserter Prozesse im Strassenunterhalt. 
 ## Funktion
 - Webaplikation die Dalux simuliert
@@ -10,7 +10,7 @@ Es wird ein Konzept für eine direkte GIS-Anbindung and das CDE sowie ein protot
 
 ### Repository lokal klonen
 
-Mit Git in einem Terminal das GitHub Repository _IP3_ in ein lokales Verzeichnis klonen.
+Mit Git in einem Terminal das GitHub-Repository _IP3_ in ein lokales Verzeichnis klonen.
 
 1. Speicherort angeben
 
@@ -31,8 +31,7 @@ Folgende Python-Module müssen für das Backend installiert werden:
 - Python 3.9.20
 - psycopg2
 
-Die Module können über das **requirements.txt** im gewünschten Prompt installiert werden. Folgend den Code für die Erstellung des
-Environments mit Anaconda.
+Die Module können über die Datei **requirements.txt** an der gewünschten Eingabeaufforderung installiert werden. Nachfolgend der Code zur Erstellung der Umgebung mit Anaconda.
 
 1. Speicherort für Environment festlegen
 
@@ -99,9 +98,9 @@ Das Schema der DB findet sich unter _DB/db_erstellen.txt._ Schema in pgAdmin kop
 
 #### Datenbank Verbindungen
 
-Für die Python und Javascript Programme gibt es je eine Datei, in der die Verbindungsinformationen gespeichert sind.
+Für die Python- und Javascript-Programme gibt es jeweils eine Datei, in der die Verbindungsinformationen gespeichert werden.
 
-Damit die bezogenen Daten per Python Script über die APIs gespeichert werden können, muss das **config_db_template.py** angepasst und in **config_db.py** umbenannt werden. Die Datei ist im Ordner `Import_DB`. Es müssen folgende Parameter geändert werden:
+Damit die per Python-Skript über die APIs bezogenen Daten gespeichert werden können, muss die Datei  **config_db_template.py** angepasst und in **config_db.py** umbenannt werden. Die Datei befindet sich im Ordner `Import_DB`. Folgende Parameter müssen geändert werden:
 
 ```py
 db_config = {
@@ -113,7 +112,7 @@ db_config = {
 }
 ```
 
-Damit die Daten in der React App mit der Express API von der Datenbank bezogen werden können, muss das **config_db_template.js** angepasst und in **config.js** umbenannt werden. Die Datei ist im Ordner `dummy\src\import_db`. Es müssen folgende Parameter geändert werden:
+Damit die Daten in der React App über die Express API aus der Datenbank geholt werden können, muss die Datei  **config_db_template.js** angepasst und in **config.js** umbenannt werden. Die Datei befindet sich im Ordner `dummy\src\import_db`. Folgende Parameter müssen geändert werden:
 
 ```js
 module.exports = {
@@ -133,15 +132,19 @@ module.exports = {
 CREATE EXTENSION postgis;
 ```
 
+### Datenbank befüllen Variante 1
+
 
 ## Geoserver
 
-Geoserver gemäss offizielle [Installationsanleitung](https://docs.geoserver.org/main/en/user/installation/index.html) einrichten.
-Wichtig bei der Installation ist das die Konfigurationsdatei `web.xml` im Ordner `webapps\geoserver\WEB-INF` mit der Datei aus dem Repsitory `geoserver\web.xml` ersetzt wird.
+Geoserver gemäss der offiziellen [Installationsanleitung](https://docs.geoserver.org/main/en/user/installation/index.html) installieren.
+Wichtig bei der Installation ist das die Konfigurationsdatei `web.xml` im Ordner `webapps\geoserver\WEB-INF` durch die Datei aus dem Repository `geoserver\web.xml` ersetzt wird.
 
-Anschliessend den Geoserver unter `bin\startup.bat` neu starten.
-
-
+Anschliessend den Geoserver mit `bin\startup.bat` neu starten.
 
 
-GIS/CDE Integration with Database
+
+
+
+
+
