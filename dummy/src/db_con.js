@@ -1,3 +1,9 @@
+/*---------------------------------------------------
+Dieser Code erstellt die Datenverbindung zum node-server
+mit der Express-API her. Zudem ist dieser Code für die 
+Speicherung der Daten in die Datenbank zuständig.
+--------------------------------------------------*/
+
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
@@ -10,16 +16,8 @@ app.use(express.json());
 const pool = new Pool(config_db);
 
 
-app.get('/api/kant_radroute', async (req, res) => {
-  try {
-    const antwort = await pool.query('SELECT id, geom FROM kant_radroute'); // Abfrage anpassen
-    res.json(antwort.rows);
-  } catch (fehler) {
-    console.error('Fehler beim Abrufen der Strassensegmente:', fehler);
-    res.status(500).send('Fehler beim Abrufen der Daten');
-  }
-});
 
+// Diese Funktion ist für die Speicherung der Daten aus dem Eingabeformular in die Datenbank zuständig.
 app.post('/api/zustand', async (req, res) => {
   const { name,vorname,  datum, text, Segment, Zustand } = req.body;
   try {

@@ -1,5 +1,13 @@
+/*-----------------------------------------------
+  Dieser Code erstellt das Eingabeformular für die 
+  Zustandbeurteilung. Dafür wird das Modul "Modal"
+  importiert.
+--------------------------------------------------*/
+
+
+
 import React, { useState } from 'react';
-import Modal from './modal'; // Importiere die Modal-Komponente
+import Modal from './modal'; 
 
 function DatenFormular() {
   const [anzeigenFormular, setAnzeigenFormular] = useState(false);
