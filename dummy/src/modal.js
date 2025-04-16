@@ -1,3 +1,8 @@
+/*-------------------------------------------------------------
+  Dieser Code erstellt das Dialogfenster für das Eingabeformular
+  der Zustandsbewertung.
+-------------------------------------------------------------*/
+
 import React from 'react';
 
 function Modal({ children, onClose }) {
@@ -13,7 +18,7 @@ function Modal({ children, onClose }) {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        zIndex: 1100, // Füge einen hohen zIndex für den Hintergrund hinzu
+        zIndex: 1100, 
       }}
       onClick={onClose} // Optional: Schließt den Modal beim Klick außerhalb
     >
@@ -23,7 +28,7 @@ function Modal({ children, onClose }) {
           padding: '20px',
           borderRadius: '8px',
           position: 'relative',
-          zIndex: 1200, // Füge einen noch höheren zIndex für den Inhalt hinzu
+          zIndex: 1200, 
         }}
         onClick={(e) => e.stopPropagation()} // Verhindert Schließen durch Klick im Modal
       >
