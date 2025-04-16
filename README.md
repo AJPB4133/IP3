@@ -131,8 +131,17 @@ module.exports = {
 
 ```sql
 CREATE EXTENSION postgis;
-CREATE EXTENSION pgrouting;
 ```
+
+
+## Geoserver
+
+Geoserver gemäss offizielle [Installationsanleitung](https://docs.geoserver.org/main/en/user/installation/index.html) einrichten.
+Wichtig bei der Installation ist das die Konfigurationsdatei `web.xml` im Ordner `webapps\geoserver\WEB-INF` mit der Datei aus dem Repsitory `geoserver\web.xml` ersetzt wird.
+
+Anschliessend den Geoserver unter `bin\startup.bat` neu starten.
+
+
 
 
 GIS/CDE Integration with Database
