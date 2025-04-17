@@ -136,7 +136,7 @@ CREATE EXTENSION postgis;
 
 1. Alphanumerische Daten
 
-Die Tabellen `strasse`, `strassentyp` und `zustandstyp` müssen mit den gleichnamigen Python files befüllt werden. Die Daten befinden sich im Ordner `Daten`.
+Die Tabellen `strasse`, `strassentyp` und `zustandstyp` müssen mit den gleichnamigen Python-files befüllt werden. Die Daten befinden sich im Ordner `Daten`.
 
 Die Tabelle `zustand` kann ebenfalls bereits mit einigen Testdaten befüllt werden. Mit der Datei `Import_DB\import_zustandserfassung.py` könnne die Daten im Ordner `zustand_test_files` in die Datenbank gespeichert werden. 
 
@@ -147,6 +147,23 @@ Die Tabelle `strassensegment` muss über ein  ein FME-Skript gefüllt werden.  E
 
 
 
+
+
+
+#### Node-Server
+
+1. neues Terminal öffnen -> als GitBash
+2. Verbindungsaufbau zum Node Server
+
+```bash
+cd dummy/src
+```
+
+3. Node Server starten
+
+```bash
+node db_con.js
+```
 
 
 ## Geoserver
