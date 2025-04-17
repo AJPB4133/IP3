@@ -134,9 +134,16 @@ CREATE EXTENSION postgis;
 
 ### Datenbank befüllen 
 
+1. Alphanumerische Daten
+
 Die Tabellen `strasse`, `strassentyp` und `zustandstyp` müssen mit den gleichnamigen Python files befüllt werden. Die Daten befinden sich im Ordner `Daten`.
 
 Die Tabelle `zustand` kann ebenfalls bereits mit einigen Testdaten befüllt werden. Mit der Datei `Import_DB\import_zustandserfassung.py` könnne die Daten im Ordner `zustand_test_files` in die Datenbank gespeichert werden. 
+
+
+2. Geodaten
+
+Die Tabelle `strassensegment` muss über ein  ein FME-Skript gefüllt werden.  Eine GeoPackage-Datei ist ausreichend. Wenn nur ein ESRI-Shape-File vorhanden ist, muss dieses zuerst in QGIS geladen werden. QGIS mit der erstellten Datenbank verbinden und aus dem Shape-File eine Tabelle erstellen. Diese Tabelle muss, dann mit FME in die Tabelle `strassensegmente` migriert werden. 
 
 
 
