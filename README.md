@@ -174,8 +174,8 @@ Wichtig bei der Installation ist das die Konfigurationsdatei `web.xml` im Ordner
 Anschliessend den Geoserver mit `bin\startup.bat` neu starten.
 
 
+Für die Nutzung des Geoservers müssen folgende schritte erledigt werden
 
-
-
-
+1. Arbeitsbereich erstellen
+  - Name : ```IP3``` 
 
