@@ -135,6 +135,8 @@ CREATE EXTENSION postgis;
 ### Datenbank befüllen Variante 1
 
 
+
+
 ## Geoserver
 
 Geoserver gemäss der offiziellen [Installationsanleitung](https://docs.geoserver.org/main/en/user/installation/index.html) installieren.
