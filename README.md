@@ -94,7 +94,7 @@ Das Backend besteht aus vier Komponenten. Einem Datenbezugsteil (Python), einer 
 
 #### Postgres inkl. Postgis
 
-Das Schema der DB findet sich unter _DB/db_erstellen.txt._ Schema in pgAdmin kopieren und ausführen.
+Das Schema der DB findet sich unter `_DB/db_erstellen.txt._` Schema in pgAdmin kopieren und ausführen.
 
 #### Datenbank Verbindungen
 
