@@ -145,10 +145,7 @@ Die Tabelle `zustand` kann ebenfalls bereits mit einigen Testdaten befüllt werd
 
 Die Tabelle `strassensegment` muss über ein  ein FME-Skript gefüllt werden.  Eine GeoPackage-Datei ist ausreichend. Wenn nur ein ESRI-Shape-File vorhanden ist, muss dieses zuerst in QGIS geladen werden. QGIS mit der erstellten Datenbank verbinden und aus dem Shape-File eine Tabelle erstellen. Diese Tabelle muss, dann mit FME in die Tabelle `strassensegmente` migriert werden. 
 
-
-
-
-
+Die Workbench befindet sich im Ordner "FME". Wichtig ist, dass das Attribut **id** des Geodatensatzes in **s_id** geändert wird, alle anderen Attribute müssen nicht umbenannt werden. Der Writer und der Reader müssen mit der Datenbank verbunden werden. Danach kann die Workbench ausgeführt werden.
 
 #### Node-Server
 
