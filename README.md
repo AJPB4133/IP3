@@ -177,5 +177,51 @@ Anschliessend den Geoserver mit `bin\startup.bat` neu starten.
 Für die Nutzung des Geoservers müssen folgende schritte erledigt werden
 
 1. Arbeitsbereich erstellen
-  - Name : ```IP3``` 
+  - Name : 
+  ```
+  IP3
+  ``` 
+  - Namensraum URI:
+  ```
+  http://localhost:8080/geoserver/ip3
+  ```
+  - Standardarbeitsbereich: [x]
+  - Security: [x]
+  - Speichern
+2. Datenspeicher hinzufügen
+  - Datenspeicher hinzufügen:
+    `PostGIS`
+  - Arbeitsbereich wählen:
+    `IP3`
+  - Name der Datenquelle:
+    `Name`
+  - Host:
+    `Hostname`
+  - Portnummer:
+    `Portnummer`
+  - Database:
+    `Name der Datenbank`
+  - User:
+    `Benutzername
+  - Password:
+    `Passwort der Datenbank`
+  - Speichern
+3. Layer erstellen
+  - Neuer Layer
+  - Arbeitsbereich wählen:
+    `IP3`
+  - Layer mit Namensraum und Präfix , `strassensegment` wählen und `Publizieren`.
+  - Koordinatenreferenzsystem:
+    `EPSG:2056`
+  - Begrenzendes Rechteck:
+    Aus den Grenzen des Koordinatenreferenzsystems berechnen, anklicken
+  - Aus den nativen Grenzen berechnen, anklicken
+  - Speichern
+4. Mehr Layer erstellen
+Sollen weitere Layer über den Geoserver zur Webanwendung hinzugefügt werden, muss Schritt 3 für jeden weiteren Layer wiederholt werden.
+
+  
+
+  
+
 
