@@ -132,7 +132,12 @@ module.exports = {
 CREATE EXTENSION postgis;
 ```
 
-### Datenbank befüllen Variante 1
+### Datenbank befüllen 
+
+Die Tabellen `strasse`, `strassentyp` und `zustandstyp` müssen mit den gleichnamigen Python files befüllt werden. Die Daten befinden sich im Ordner `Daten`.
+
+Die Tabelle `zustand` kann ebenfalls bereits mit einigen Testdaten befüllt werden. Mit der Datei `Import_DB\import_zustandserfassung.py` könnne die Daten im Ordner `zustand_test_files` in die Datenbank gespeichert werden. 
+
 
 
 
